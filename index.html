@@ -24,177 +24,462 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3 class="inverted">A CSS 3D Slideshow</h3>
-					<script>
-						// Delicously hacky. Look away.
-						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
-						document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
-					</script>
+					<h1>JavaScript @ CloudFlare</h1>
+					<h3 class="inverted">an intervention</h3>
 				</section>
-				
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is an easy to use, HTML based, presentation tool. You'll need a modern browser with 
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-					<p>
-						<i><small>- <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small></i>
-					</p>
-				</section>
-				
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,<br/>
-							try pressing <a href="#/2/1">down</a>.
-						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+                <section>
+                    <h2>Hi I'm Chris</h2>
+                    <p>Some projects I work on:</p>
+                    <ul>
+                        <li>Rocket Loader</li>
+                        <li>CloudFlareJS</li>
+                        <li>Mirage, Preloader, Tracking..</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Valid JavaScript questions:</h2>
+                    <ul>
+                        <li class="fragment">Why is it so fraked up?</li>
+                        <li class="fragment">Why won't it go away?</li>
+                        <li class="fragment">What is CloudFlare doing about it?</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>First, a cheap meme:</h2>
+                        <img src="assets/images/thegoodparts.jpg" />
+                    </section>
+                    <section>
+                        <h2>Another perspective:</h2>
+                        <img src="assets/images/thegoodparts2.jpg" />
+                    </section>
+                    <section>
+                        <h2>And again:</h2>
+                        <img src="assets/images/thegoodparts3.jpg" />
+                    </section>
+                </section>
+                <section>
+                    <h2>People like to make fun of JavaScript</h2>
+                    <p>and JavaScript deserves it</p>
+                    <img src="assets/images/evilparts.png" height="360" />
+                </section>
+                <section>
+                    <h2>A beard meme:</h2>
+                    <img src="assets/images/beards.png" height="300" />
+                    <p><span class="fragment">John McCarthy (Lisp), </span><span class="fragment">Dennis Ritchie (C), </span><span class="fragment">Bjarne Stroustrip (C++), </span><span class="fragment">James Gosling (Java), </span><span class="fragment">Guido van Rossum (Python), </span><span class="fragment">Brendan Eich (JavaScript)</span></p>
+                </section>
+                <section>
+                    <h2>Meet the lowly identifier</h2>
+                    <pre><code>foo</code></pre>
+                    <pre class="fragment"><code>
+> foo
+Reference Error: foo is not defined
+                    </code></pre>
+                    <pre class="fragment"><code>
+> var foo
+undefined
+                    </code></pre>
+                    <pre class="fragment"><code>
+> foo
+  var foo
+undefined
+                    </code></pre>
+                </section>
+                <section>
+                    <section>
+                        <h2>Truthiness and Falsiness</h2>
+                        <pre><code>
+// Falsey values:
+// false, 0, undefined, null, NaN, ''
 
-				<section>
-					<h2>Holistic Overview</h2>
-					<p>
-						Press <strong>SPACE</strong> to enter the slide overview.
-					</p>
-				</section>
+var foo = '';
 
-				<section>
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like:
-					</p>
-					<ul>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=cube">Cube</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=page">Page</a></li>
-						<li><a href="http://lab.hakim.se/reveal-js/?transition=concave">Concave</a></li>
-					</ul>
-				</section>
-					
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+if(foo)
+    console.log("This sentence is never spoken.");
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						For years there has been a theory that millions of monkeys typing at random on millions of typewriters would 
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.
-					</blockquote>
-				</section>
-				
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code contenteditable>
-	var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-					document.body.style['MozPerspective'] !== undefined ||
-					document.body.style['perspective'] !== undefined;
+// Truthy values:
+// Anything that is not a falsey value
 
-	function linkify( selector ) {
-	    if( supports3DTransforms ) {
-	        
-	        var nodes = document.querySelectorAll( selector );
+var bar = 100;
 
-	        for( var i = 0, len = nodes.length; i < len; i++ ) {
-	            var node = nodes[i];
+if(bar)
+    console.log("Bar is truthy, so consider this logged.");
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Falsey or not, here it comes</h2>
+                        <pre><code>
+> NaN != undefined
+true
 
-	            if( !node.className || !node.className.match( /roll/g ) ) {
-	                node.className += ' roll';
-	                node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-	            }
-	        };
-	    }
-	}
+> null != undefined
+true
 
-	linkify( 'a' );
-					</code></pre>
-					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-				
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,<br/>
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+> undefined != null
+false
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Clever, clever type coercion</h2>
+                        <h3>Much cleverness is involved</h3>
+                        <p>Behold the cleverness:</p>
+                        <pre class="fragment"><code>
+> [] + []
+""
 
-				<section>
-					<h2>Fragmented Views</h2>
-					<p>Hit the next arrow...</p>
-					<p class="fragment">... to step through ...</p>
-					<ol>
-						<li class="fragment"><code>any type</code></li>
-						<li class="fragment"><em>of view</em></li>
-						<li class="fragment"><strong>fragments</strong></li>
-					</ol>
-				</section>
-				
-				<section>
-					<h2>Spectacular image!</h2>
-					<a class="image" href="http://hakim.se/experiments/html5/breakdom/" target="_blank">
-						<img width="320" height="412" src="https://s3.amazonaws.com/hakim-static/reveal-js/breakdom.png">
-					</a>
-				</section>
-				
-				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on github</a></li>
-						<li><a href="http://hakim.se/projects/reveal-js">Read more on my site</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
-				</section>
-				
-				<section>
-					<h1>THE END</h1>
-					<h3 class="inverted">BY Hakim El Hattab / hakim.se</h3>
-				</section>
-			</div>
+> [] + {}
+"[object Object]"
 
+> {} + {}
+NaN
+                        </pre></code>
+                        <p class="fragment">(wat)</p>
+                    </section>
+                    <section>
+                        <h2>Wat is really happening</h2>
+                        <ul>
+                            <li>Plus operator adds numbers</li>
+                            <li>Plus operator also concatenates strings</li>
+                            <li>Everything else must be converted</li>
+                            <li>Chaos generally ensues</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>But.. but... why??</h2>
+                    <p class="fragment">Frankly, no language is perfect.</p>
+                    <a class="fragment" href="http://colinm.org/language_checklist.html">Why your programming language sucks</a>
+                    <p class="fragment">Engineers love to bitch about the languages they don't use</p>
+                </section>
+                <section>
+                    <h2>A topical quote</h2>
+
+                    <p>More of a paraphrase than a quote, really..</p>
+                    <p>"JavaScript won because it's the best terrible language ever made."</p>
+                    <p class="fragment"> ~ Mike Sofaer</p>
+                </section>
+                <section>
+                    <h2>Douglas Crockford sez</h2>
+                    <p>"Most of the people writing in JavaScript are not programmers. They lack the training and discipline to write good programs. JavaScript has so much expressive power that they are able to do useful things in it, anyway."</p>
+                </section>
+                <section>
+                    <h2>Douglas who?</h2>
+                    <img class="fragment" src="assets/images/thegoodparts.jpg" />
+                </section>
+                <section>
+                    <h2>Crockford is a funny guy</h2>
+                    <p>"The design of the language on the whole is quite sound. Surprisingly, the ECMAScript committee does not appear to be interested in correcting [JavaScript's] problems. Perhaps they are more interested in making new ones."</p>
+                </section>
+                <section>
+                    <h2>The awesomeness has only begun..</h2>
+                </section>
+                <section>
+                    <h1>JavaScript is in your browser</h1>
+                </section>
+                <section>
+                    <h2>Before you get excited</h2>
+                    <p>This is a terrible thing </p>
+                </section>
+                <section>
+                    <h2>JavaScript is slow</h2>
+                    <ul>
+                        <li class="fragment">JavaScript does not run as fast as native code</li>
+                        <li class="fragment">
+                            <img src="assets/images/turtle.png" height="300"/>
+                        </li>
+                        <li class="fragment">JavaScript downloading "blocks" other website resources</li>
+                        <li class="fragment">JavaScript EXECUTION "blocks" other website resources</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>The worst part</h2>
+                    <p>JavaScript can be used to load more JavaScript!</p>
+                    <img src="assets/images/inception.jpg" />
+                </section>
+                <section>
+                    <section>
+                        <h2>What is this "blocks" thing?</h2>
+                        <p>When JavaScript downloads and runs, it prevents other parts of the page (including other JavaScript) from downloading and running.</p>
+                    </section>
+                    <section>
+                        <h2>A contrived HTML document</h2>
+                        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+
+        &lt;title&gt;Awesome Webpage&lt;/title&gt;
+
+        &lt;script type="text/javascript" src="/some/javascript.js"&gt;&lt;/script&gt;
+
+        &lt;link rel="stylesheet" href="/some/stylesheet.css" /&gt;
+
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h1&gt;Awesome webpage header!&lt;/h1&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>An example I googled:</h2>
+                        <img src="assets/images/waterfall.png" />
+                    </section>
+                    <section>
+                        <h2>An example I stole from Steve Souders:</h2>
+                        <img src="assets/images/withoutjs.png" />
+                    </section>
+                </section>
+                <section>
+                    <h1>JavaScript is a disease</h1>
+                    <p class="fragment">..and CloudFlare is the cure.</p>
+                    <p class="fragment">(sort of)</p>
+                </section>
+                <section>
+                    <h2>Enter Rocket Loader</h2>
+                    <p>Rocket Loader is a tool to make JavaScript not 'block'</p>
+                </section>
+                <section>
+                    <h2>"The plan"</h2>
+                    <h3>by Steve Souders</h3>
+                    <ol>
+                        <li class="fragment">Break all script tags to stop them from loading</li>
+                        <li class="fragment">While the page loads, preload scripts asynchronously</li>
+                        <li class="fragment">???</li>
+                        <li class="fragment">Allow the page to load completely</li>
+                        <li class="fragment">Step through all broken scripts and "fix" them so that they execute</li>
+                        <li class="fragment">Profit</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>This is really hard</h2>
+                    <ul>
+                        <li class="fragment">How do you break scripts before they start downloading?</li>
+                        <li class="fragment">How do you preload scripts without executing them?</li>
+                        <li class="fragment">document.write</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>A word on document.write</h2>
+                    <h1 class="fragment">DONT</h1>
+                </section>
+                <section>
+                    <h2>CloudFlare domination strategy</h2>
+                    <ul>
+                        <li class="fragment">NGINX "breaks" all scripts</li>
+                        <li class="fragment">PHP backend gives us same-domain AJAX ("the bag")</li>
+                        <li class="fragment">JavaScript client library ("Rocket") handles execution</li>
+                    </ul>
+                    <img class="fragment" src="assets/images/process.png" />
+                </section>
+                <section>
+                    <h2>How do you "break" scripts?</h2>
+                    <p>Before:</p>
+                    <pre><code>
+&lt;script type="text/javascript" src="/javascripts/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/javascripts/cornify.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(function() {
+
+        alert('am i doin it rigjt?');
+    });
+&lt;/script&gt;
+                    </pre></code>
+                    <div class="fragment">
+                        <p>After:</p>
+                        <pre><code>
+&lt;script type="text/rocketscript" data-rocketsrc="/javascripts/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/rocketscript" data-rocketsrc="/javascripts/cornify.js"&gt;&lt;/script&gt;
+&lt;script type="text/rocketscript"&gt;
+    $(function() {
+
+        alert('am i doin it rigjt?');
+    });
+&lt;/script&gt;
+                        </pre></code>
+                    </div>
+                </section>
+                <section>
+                    <section>
+                        <h2>CLoudFlare's (sexy) bag</h2>
+                        <p>Something only CloudFlare can do well.</p>
+                    </section>
+                    <section>
+                        <h2>Preload JavaScript via AJAX</h2>
+                        <p>CloudFlare sets up a same-domain AJAX endpoint</p>
+                        <pre><code>
+GET /cdn-cgi/pe/bag?r[]=/javascripts/jquery.js&amp;r[]=/javascripts/cornify.js
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>The bag streams it back</h2>
+                        <pre><code>
+--foobar
+Bag: 257|222|-1|200|text/bag-manifest
+
+0:http://www.leangreenmonkey.info/small1.js
+1:http://www.leangreenmonkey.info/small3.js
+2:http://www.leangreenmonkey.info/small2.js
+
+--foobar
+Bag: 79|39|0|200|application/x-javascript|7200
+
+function small1(bleh) {
+    return bleh;
+}
+
+--foobar
+Bag: 79|39|2|200|application/x-javascript|7200
+
+function small2(bleh) {
+    return bleh;
+}
+
+--foobar
+Bag: 79|39|1|200|application/x-javascript|7200
+
+function small3(bleh) {
+    return bleh;
+}
+
+--foobar--
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1>BAM</h1>
+                        <p>All your JavaScript preloaded in one request</p>
+                    </section>
+                    <section>
+                        <h1>Stylesheets</h1>
+                        <h2>coming to a bag near you</h2>
+                    </section>
+                </section>
+                <section>
+                    <h2>Enter the Rocket</h2>
+                    <p>The page is loaded</p>
+                    <p>The JavaScript is precached</p>
+                    <p>Time to dominate</p>
+                </section>
+                <section>
+                    <h2>Rocket executes scripts</h2>
+                    <p>Page order must be maintained</h2>
+                    <p>All page events are simulated</p>
+                    <p>Page state is masked</p>
+                </section>
+                <section>
+                    <h2>Scripts are cheeky bastards</h2>
+                    <p class="fragment">Scripts look at themselves (introspection)</p>
+                    <p class="fragment">Scripts insert other scripts</p>
+                    <p class="fragment">Scripts call document.write</p>
+                </section>
+                <section>
+                    <section>
+                        <h2>Handling curious scripts</h2>
+                        <p>Scripts need to be tricked into thinking the DOM is still sane.</p>
+                    </section>
+                    <section>
+                        <h2>Page events</h2>
+                        <p>Simplified example:</p>
+                        <pre><code>
+window.addEventListener = function(type) {
+
+    if(type == 'load')
+        deferHandler(arguments);
+    else
+        listenNormally.apply(window, arguments);
+
+}
+                        </pre></code>
+                    </section>
+                    <section>
+                        <h2>Introspection</h2>
+                        <p>Simplified example:</p>
+                        <pre><code>
+document.getElementsByTagName = function(type) {
+
+    if(type == 'script')
+        return listOfFakeScripts;
+    else
+        return normalListOfElements;
+
+}
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>More on document.write</h2>
+                        <ul>
+                            <li class="fragment">Intended for insertion while HTML is parsing</li>
+                            <li class="fragment">If it happens late, it kills the page</li>
+                            <li class="fragment">It happens EVERYWHERE (ads)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Rocket pwnz document.write</h2>
+                        <p>Simplified example:</p>
+                        <pre><code>
+document.write = function(out) {
+
+    console.log("Appending to document.write buffer: \n" + out);
+
+    parser.parseChunk(out);
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Rocket has a parser</h2>
+                        <ul>
+                            <li>Raw HTML is passed to parser</li>
+                            <li>Parser generates an abstract representation</li>
+                            <li>AST is sent back to vile script from whence it came</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>When scripts have babies</h2>
+                        <p>Dynamically created scripts are 'bagged' on the fly.</p>
+                    </section>
+                    <section>
+                        <h2>With document.write</h2>
+                        <p>Scripts created with document.write are added to the queue after their parent.</p>
+                    </section>
+                    <section>
+                        <h2>With document.createElement</h2>
+                        <p>Scripts created with document.create element are added to the end of the queue.</p>
+                    </section>
+                </section>
+                <section>
+                    <h2>In summary</h2>
+                    <img src="assets/images/domination.png" height="400" style="background:white;" />
+                </section>
+                <section>
+                    <h2>A short bit on CFJS</h2>
+                    <ul>
+                        <li class="fragment">Born from Rocket Loader</li>
+                        <li class="fragment">Platform for loading / sandboxing JS apps the right way</li>
+                        <li class="fragment">Works with or without the bag</li>
+                        <li class="fragment">We use it for apps. Ads?</li>
+                        <li class="fragment">Learn more about <a href="http://www.commonjs.org/">CommonJS</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Looking forward</h2>
+                    <ul>
+                        <li>Mirage: the next wave of domination</li>
+                        <li>CSS optimization in Rocket Loader</li>
+                        <li>CFJS: Apps, ads and more</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Fin</h1>
+                </section>
+            </div>
 			<!-- The navigational controls UI -->
 			<aside class="controls">
 				<a class="left" href="#">&#x25C4;</a>

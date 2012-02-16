@@ -301,6 +301,11 @@ var Reveal = (function(){
         }
 	}
 
+    function hasClass(element, cls) {
+
+        return element.classList.contains(cls);
+    }
+
 	/**
 	 * Displays the overview of slides (quick nav) by 
 	 * scaling down and arranging all slide elements.
