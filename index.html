@@ -29,20 +29,13 @@
 				</section>
                 <section>
                     <h2>Hi I'm Chris</h2>
-                    <p>Some projects I work on:</p>
+                    <p>Some projects I work on at CloudFlare:</p>
                     <ul>
                         <li>Rocket Loader</li>
                         <li>CloudFlareJS</li>
-                        <li>Mirage, Preloader, Tracking..</li>
+                        <li>Image Optimization, Resource Preloading, Tracking..</li>
                     </ul>
-                </section>
-                <section>
-                    <h2>Valid JavaScript questions:</h2>
-                    <ul>
-                        <li class="fragment">Why is it so fraked up?</li>
-                        <li class="fragment">Why won't it go away?</li>
-                        <li class="fragment">What is CloudFlare doing about it?</li>
-                    </ul>
+                    <p style="margin-top: 20px;"><a href="mailto:chris@cloudflare.com">chris@cloudflare.com</a>&nbsp;&middot;&nbsp;<a href="http://twitter.com/robodynamo">@robodynamo</a></p>
                 </section>
                 <section>
                     <section>
@@ -57,16 +50,23 @@
                         <h2>And again:</h2>
                         <img src="assets/images/thegoodparts3.jpg" />
                     </section>
+                    <section>
+                        <h2>Seriously?</h2>
+                        <img src="assets/images/evilparts.png" height="380" />
+                    </section>
                 </section>
                 <section>
-                    <h2>People like to make fun of JavaScript</h2>
-                    <p>and JavaScript deserves it</p>
-                    <img src="assets/images/evilparts.png" height="360" />
-                </section>
-                <section>
-                    <h2>A beard meme:</h2>
+                    <h2>Beards</h2>
                     <img src="assets/images/beards.png" height="300" />
-                    <p><span class="fragment">John McCarthy (Lisp), </span><span class="fragment">Dennis Ritchie (C), </span><span class="fragment">Bjarne Stroustrip (C++), </span><span class="fragment">James Gosling (Java), </span><span class="fragment">Guido van Rossum (Python), </span><span class="fragment">Brendan Eich (JavaScript)</span></p>
+                    <p><span>John McCarthy (Lisp), </span><span>Dennis Ritchie (C), </span><span>Bjarne Stroustrip (C++), </span><span>James Gosling (Java), </span><span>Guido van Rossum (Python), </span><span>Brendan Eich (JavaScript)</span></p>
+                </section>
+                <section>
+                    <h2>JavaScript is..</h2>
+                    <ul>
+                        <li class="fragment">..not a great language</li>
+                        <li class="fragment">..not going away soon</li>
+                        <li class="fragment">..something we're tyring to improve at CloudFlare</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>Meet the lowly identifier</h2>
@@ -81,6 +81,14 @@ undefined
                     </code></pre>
                     <pre class="fragment"><code>
 > foo
+
+  [0, 1, 2, 3, 4, 5].forEach(
+    function() {
+
+      // Do stuff..
+    }
+  );
+  
   var foo
 undefined
                     </code></pre>
@@ -107,25 +115,50 @@ if(bar)
                         </code></pre>
                     </section>
                     <section>
-                        <h2>Falsey or not, here it comes</h2>
+                        <h2>Falsey or not</h2>
                         <pre><code>
-> NaN != undefined
-true
-
-> null != undefined
-true
-
-> undefined != null
+> NaN == undefined
 false
+
+> null == undefined
+false
+
+> undefined == null
+true
                         </code></pre>
+                    </section>
+                    <section>
+                        <h2>What to do?</h2>
+                        <h3 class="fragment">Use === instead of ==</h3>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>Clever, clever type coercion</h2>
-                        <h3>Much cleverness is involved</h3>
-                        <p>Behold the cleverness:</p>
-                        <pre class="fragment"><code>
+                        <h2>Clever type coercion</h2>
+                        <p>Evidence of cleverness in JavaScript: the + operator</p>
+                        <ul>
+                            <li>Adds numbers.. AND concatenates strings</li>
+                            <li>Not a number? Not a string? Converted automatically.</li>
+                            <li>Chaos ensues</li>
+                        </ul>
+                        <p><a href="http://jsconsole.com/">Demo time</a></p>
+                    </section>
+                    <section>
+                        <h2>Basic arithmentic</h2>
+                        <pre><code>
+> 1 + 1
+2
+
+> 1 + " + " + 1
+"1 + 1"
+
+> "1 + 1 = " + 1 + 1
+"1 + 1 = 11"
+                        </pre></code>
+                    </section>
+                    <section>
+                        <h2>Advanced maths</h2>
+                        <pre><code>
 > [] + []
 ""
 
@@ -137,64 +170,39 @@ NaN
                         </pre></code>
                         <p class="fragment">(wat)</p>
                     </section>
-                    <section>
-                        <h2>Wat is really happening</h2>
-                        <ul>
-                            <li>Plus operator adds numbers</li>
-                            <li>Plus operator also concatenates strings</li>
-                            <li>Everything else must be converted</li>
-                            <li>Chaos generally ensues</li>
-                        </ul>
-                    </section>
                 </section>
                 <section>
-                    <h2>But.. but... why??</h2>
-                    <p class="fragment">Frankly, no language is perfect.</p>
-                    <a class="fragment" href="http://colinm.org/language_checklist.html">Why your programming language sucks</a>
-                    <p class="fragment">Engineers love to bitch about the languages they don't use</p>
+                    <h1>Why the frak do we use JavaScript?</h1>
                 </section>
                 <section>
-                    <h2>A topical quote</h2>
-
-                    <p>More of a paraphrase than a quote, really..</p>
+                    <h2>Some topical quotes</h2>
                     <p>"JavaScript won because it's the best terrible language ever made."</p>
-                    <p class="fragment"> ~ Mike Sofaer</p>
-                </section>
-                <section>
-                    <h2>Douglas Crockford sez</h2>
-                    <p>"Most of the people writing in JavaScript are not programmers. They lack the training and discipline to write good programs. JavaScript has so much expressive power that they are able to do useful things in it, anyway."</p>
-                </section>
-                <section>
-                    <h2>Douglas who?</h2>
-                    <img class="fragment" src="assets/images/thegoodparts.jpg" />
-                </section>
-                <section>
-                    <h2>Crockford is a funny guy</h2>
-                    <p>"The design of the language on the whole is quite sound. Surprisingly, the ECMAScript committee does not appear to be interested in correcting [JavaScript's] problems. Perhaps they are more interested in making new ones."</p>
-                </section>
-                <section>
-                    <h2>The awesomeness has only begun..</h2>
+                    <p>"Javascript is the worst language ever to be deployed on every major browser in the world"</p>
                 </section>
                 <section>
                     <h1>JavaScript is in your browser</h1>
                 </section>
                 <section>
-                    <h2>Before you get excited</h2>
-                    <p>This is a terrible thing </p>
+                    <h2>Everything is built with JavaScript</h2>
+                    <ul>
+                        <li>Photo galleries</li>
+                        <li>Facebook feeds &amp; Twitter timelines</li>
+                        <li>Likes, Plus Ones, Nyancats</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>JavaScript is slow</h2>
                     <ul>
-                        <li class="fragment">JavaScript does not run as fast as native code</li>
-                        <li class="fragment">
+                        <li>JavaScript does not run as fast as native code</li>
+                        <li>
                             <img src="assets/images/turtle.png" height="300"/>
                         </li>
-                        <li class="fragment">JavaScript downloading "blocks" other website resources</li>
-                        <li class="fragment">JavaScript EXECUTION "blocks" other website resources</li>
+                        <li>JavaScript downloading "blocks" other website resources</li>
+                        <li>JavaScript EXECUTION "blocks" other website resources</li>
                     </ul>
                 </section>
                 <section>
-                    <h2>The worst part</h2>
+                    <h2>Complicating things</h2>
                     <p>JavaScript can be used to load more JavaScript!</p>
                     <img src="assets/images/inception.jpg" />
                 </section>
@@ -226,22 +234,13 @@ NaN
                         </code></pre>
                     </section>
                     <section>
-                        <h2>An example I googled:</h2>
-                        <img src="assets/images/waterfall.png" />
-                    </section>
-                    <section>
-                        <h2>An example I stole from Steve Souders:</h2>
-                        <img src="assets/images/withoutjs.png" />
+                        <h2>The impact of blocking</h2>
+                        <img src="assets/images/blocking.png" />
                     </section>
                 </section>
                 <section>
-                    <h1>JavaScript is a disease</h1>
-                    <p class="fragment">..and CloudFlare is the cure.</p>
-                    <p class="fragment">(sort of)</p>
-                </section>
-                <section>
-                    <h2>Enter Rocket Loader</h2>
-                    <p>Rocket Loader is a tool to make JavaScript not 'block'</p>
+                    <h2>Enter The Rocket</h2>
+                    <p>Rocket Loader is a tool we built to make JavaScript not 'block'</p>
                 </section>
                 <section>
                     <h2>"The plan"</h2>
@@ -258,9 +257,9 @@ NaN
                 <section>
                     <h2>This is really hard</h2>
                     <ul>
-                        <li class="fragment">How do you break scripts before they start downloading?</li>
-                        <li class="fragment">How do you preload scripts without executing them?</li>
-                        <li class="fragment">document.write</li>
+                        <li>How do you break scripts before they start downloading?</li>
+                        <li>How do you preload scripts without executing them?</li>
+                        <li>document.write</li>
                     </ul>
                 </section>
                 <section>
@@ -269,12 +268,11 @@ NaN
                 </section>
                 <section>
                     <h2>CloudFlare domination strategy</h2>
-                    <ul>
-                        <li class="fragment">NGINX "breaks" all scripts</li>
-                        <li class="fragment">PHP backend gives us same-domain AJAX ("the bag")</li>
-                        <li class="fragment">JavaScript client library ("Rocket") handles execution</li>
-                    </ul>
-                    <img class="fragment" src="assets/images/process.png" />
+                    <ol>
+                        <li>NGINX "breaks" all scripts</li>
+                        <li>PHP backend gives us same-domain AJAX ("the bag")</li>
+                        <li>JavaScript client library ("Rocket") handles execution</li>
+                    </ol>
                 </section>
                 <section>
                     <h2>How do you "break" scripts?</h2>
@@ -305,25 +303,35 @@ NaN
                 </section>
                 <section>
                     <section>
-                        <h2>CLoudFlare's (sexy) bag</h2>
-                        <p>Something only CloudFlare can do well.</p>
+                        <h2>CloudFlare's (sexy) bag</h2>
+                        <p>Also known as the JavaScript proxy.</p>
                     </section>
                     <section>
                         <h2>Preload JavaScript via AJAX</h2>
                         <p>CloudFlare sets up a same-domain AJAX endpoint</p>
                         <pre><code>
-GET /cdn-cgi/pe/bag?r[]=/javascripts/jquery.js&amp;r[]=/javascripts/cornify.js
+http://www.example.com/
+                        </code></pre>
+                        <p>has "the bag" at</p>
+                        <pre><code>
+http://www.example.com/cdn-cgi/pe/bag
                         </code></pre>
                     </section>
                     <section>
-                        <h2>The bag streams it back</h2>
+                        <h2>We can ask "the bag" for JavaScript</h2>
+                        <pre><code>
+GET /cdn-cgi/pe/bag?r[]=/javascripts/some.js&amp;r[]=/javascripts/another.js&amp;r[]=/javascripts/final.js
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>"The bag" sends JS back as text</h2>
                         <pre><code>
 --foobar
 Bag: 257|222|-1|200|text/bag-manifest
 
-0:http://www.leangreenmonkey.info/small1.js
-1:http://www.leangreenmonkey.info/small3.js
-2:http://www.leangreenmonkey.info/small2.js
+0:http://www.example.com/javascripts/some.js
+1:http://www.example.com/javascripts/another.js
+2:http://www.example.com/javascripts/final.js
 
 --foobar
 Bag: 79|39|0|200|application/x-javascript|7200
@@ -350,8 +358,9 @@ function small3(bleh) {
                         </code></pre>
                     </section>
                     <section>
-                        <h1>BAM</h1>
-                        <p>All your JavaScript preloaded in one request</p>
+                        <h1>A big advantage</h1>
+                        <p>All your JavaScript is loaded in one request</p>
+                        <p>Text can be stored in localStorage and executed in a controlled way</p>
                     </section>
                     <section>
                         <h1>Stylesheets</h1>
@@ -359,27 +368,27 @@ function small3(bleh) {
                     </section>
                 </section>
                 <section>
-                    <h2>Enter the Rocket</h2>
-                    <p>The page is loaded</p>
-                    <p>The JavaScript is precached</p>
-                    <p>Time to dominate</p>
+                    <h1>Finally</h1>
+                    <h3>The page is loaded</h3>
+                    <h3>The JavaScript is precached</h3>
+                    <h3>Time to rocket</h3>
                 </section>
                 <section>
-                    <h2>Rocket executes scripts</h2>
+                    <h2>Rocket Loader executes scripts</h2>
                     <p>Page order must be maintained</h2>
                     <p>All page events are simulated</p>
                     <p>Page state is masked</p>
                 </section>
                 <section>
-                    <h2>Scripts are cheeky bastards</h2>
-                    <p class="fragment">Scripts look at themselves (introspection)</p>
-                    <p class="fragment">Scripts insert other scripts</p>
-                    <p class="fragment">Scripts call document.write</p>
+                    <h2>Scripts are difficult to manage</h2>
+                    <p>They look at themselves (introspection)</p>
+                    <p>They insert other scripts</p>
+                    <p>They call document.write</p>
                 </section>
                 <section>
                     <section>
                         <h2>Handling curious scripts</h2>
-                        <p>Scripts need to be tricked into thinking the DOM is still sane.</p>
+                        <p>Trick them into thinking the world is different.</p>
                     </section>
                     <section>
                         <h2>Page events</h2>
@@ -393,7 +402,7 @@ window.addEventListener = function(type) {
         listenNormally.apply(window, arguments);
 
 }
-                        </pre></code>
+                        </code></pre>
                     </section>
                     <section>
                         <h2>Introspection</h2>
@@ -414,13 +423,13 @@ document.getElementsByTagName = function(type) {
                     <section>
                         <h2>More on document.write</h2>
                         <ul>
-                            <li class="fragment">Intended for insertion while HTML is parsing</li>
-                            <li class="fragment">If it happens late, it kills the page</li>
-                            <li class="fragment">It happens EVERYWHERE (ads)</li>
+                            <li>Intended for insertion while HTML is parsing</li>
+                            <li>If it happens late, it kills the page</li>
+                            <li>It happens EVERYWHERE (ads)</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Rocket pwnz document.write</h2>
+                        <h2>Rocket overrides document.write</h2>
                         <p>Simplified example:</p>
                         <pre><code>
 document.write = function(out) {
@@ -455,25 +464,41 @@ document.write = function(out) {
                     </section>
                 </section>
                 <section>
-                    <h2>In summary</h2>
-                    <img src="assets/images/domination.png" height="400" style="background:white;" />
+                    <h2>The final result</h2>
+                    <iframe src="http://player.vimeo.com/video/24293160?title=0&amp;byline=0&amp;portrait=0" width="400" height="168" frameborder="0"></iframe>
                 </section>
                 <section>
-                    <h2>A short bit on CFJS</h2>
-                    <ul>
-                        <li class="fragment">Born from Rocket Loader</li>
-                        <li class="fragment">Platform for loading / sandboxing JS apps the right way</li>
-                        <li class="fragment">Works with or without the bag</li>
-                        <li class="fragment">We use it for apps. Ads?</li>
-                        <li class="fragment">Learn more about <a href="http://www.commonjs.org/">CommonJS</a></li>
-                    </ul>
+                    <section>
+                        <h2>A short bit on CFJS</h2>
+                        <ul>
+                            <li class="fragment">Born from Rocket Loader</li>
+                            <li class="fragment">Open source &amp; backwards compatible to IE6</li>
+                            <li class="fragment">Platform for loading / sandboxing JS apps the right way</li>
+                            <li class="fragment">Works with or without the bag</li>
+                            <li class="fragment">We use it for apps and all internal JS projects</li>
+                            <li class="fragment">Learn more about <a href="http://js.cloudflare.com/">CloudFlareJS</a></li>
+                            <li class="fragment">Learn more about <a href="http://www.commonjs.org/">CommonJS</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A quick demo</h2>
+                        <pre><code>
+// Insert CFJS
+try{window.CloudFlare||function(){var a=window.document,b=a.createElement("script"),a=a.getElementsByTagName("script")[0];window.CloudFlare=[];b.type="text/javascript";b.async=!0;b.src="//ajax.cloudflare.com/cdn-cgi/nexp/cloudflare.js";a.parentNode.insertBefore(b,a)}()}catch(e$$5){try{console.error(e$$5.message)}catch(e$$6){}};
+
+// Load important code
+CloudFlare.require(['http://www.cornify.com/js/cornify.js'], function() { for(var i = 0; i &lt; 50; i++) cornify_add(); });
+                        </code></pre>
+                        <p><a href="http://www.newscorp.com/">Demo site</a></p>
+                    </section>
                 </section>
                 <section>
                     <h2>Looking forward</h2>
                     <ul>
-                        <li>Mirage: the next wave of domination</li>
-                        <li>CSS optimization in Rocket Loader</li>
-                        <li>CFJS: Apps, ads and more</li>
+                        <li>Mirage: automatically optimizing images</li>
+                        <li>CSS loading through Rocket Loader</li>
+                        <li>CloudFlare Apps</li>
+                        <li>CFJS and Advertising... and YOU</li>
                     </ul>
                 </section>
                 <section>
